@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>관리자 페이지 - 사용자 관리</title>
+        <link rel="stylesheet" href="../css/admin.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/2bebefe117.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="grid">
+            <div class="left">
+                <ul><a href="/admin"><h2>관리자 페이지</h2></a></ul>
+                <ul>
+                    <li><a href="/admin/users"><i class="fa-solid fa-angle-right"></i>&nbsp;사용자 관리</a></li>
+                    <li><a href="/admin/votes"><i class="fa-solid fa-angle-down"></i>&nbsp;투표 관리</a></li>
+                    <li><a href="/admin/comments"><i class="fa-solid fa-angle-down"></i>&nbsp;댓글 관리</a></li>
+                    <li><a href="/admin/chattings"><i class="fa-solid fa-angle-down"></i>&nbsp;채팅 관리</a></li>
+                </ul>
+            </div>
+
+            <div class="right">
+                <h1>사용자 관리</h1>
+                <form action="/board/search" method="GET">
+                    <div class="search">
+                        <input name="keyword" type="text" placeholder="사용자 검색">
+                        <button class="button_search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
+
+                    <div class="topOfTable">
+                        <select class="sorting">
+                            <option>ID순</option>
+                            <option>이름순</option>
+                            <option>이메일순</option>
+                        </select>
+                        <form class="delete" action="post">
+                            <button onclick="userDelete()" type="button" class="right_button"><i class="fa-solid fa-trash">&nbsp회원 탈퇴</i></button>
+                        <button class="right_button"><a href="javascript:alert('준비중입니다.');"><i class="fa-solid fa-message">&nbsp메시지 전송</i></a></button>
+                    </div>
+
+                    <table class = "managePage_table">
+                        <thead class="thead-strong">
+                        <tr>
+                            <th scope="row"> <input type="checkbox" name="member" value={id} checked> </th>
+                            <th scope="row">아이디</th>
+                            <th scope="row">이름</th>
+                            <th scope="row">이메일</th>
+                            <th scope="row">가입일</th>
+                            <th scope="row">글/댓글/투표참여</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {{#userList}}
+                        <tr class="content">
+                            <th><input type="checkbox" name="member" value={id} checked></th>
+                            <td>{{id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td>{{joindate}}</td>
+                            <td>{{createcount}}/{{commentcount}}/{{votecount}}</td>
+                        </tr>
+                        {{/userList}}
+                        </tbody>
+                    </table>
+                <div class="paging"><a href="" style="font-weight:bolder">1</a> &nbsp &nbsp <a href="">2</a></div>
+            </div>
+        </div>
+        <script src="/js/admin_user.js"></script>
+    </body>
+</html>

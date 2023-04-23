@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/js/login.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+<header>
+
+</header>
+<section>
+    <div class="login_wrapper">
+        <h2>LOGIN</h2>
+        <form id="login_form" method="post" action="/login">
+            <div>
+                <input type="text" name="userID" placeholder="ID" class="userID">
+                <span class="error material-symbols-outlined">
+                        error_circle_rounded
+                    </span>
+            </div>
+            <div>
+                <input type="password" name="userPW" placeholder="PW" class="userPW">
+                <span class="error material-symbols-outlined">
+                        error_circle_rounded
+                    </span>
+            </div>
+
+            <label for="remember_check">
+                <input type="checkbox" id="remember_check">&nbsp;아이디 기억하기
+            </label>
+            <br>
+
+            <input type="button" value="로그인"  onclick="loginFormCheck(this.form)">
+            <div class="btn">
+                <a class="find_id" href="#">아이디 찾기</a>
+                <span>|</span>
+                <a class="find_pw" href="#">비밀번호 찾기</a>
+                <span>|</span>
+                <a class="account" href="/signup">회원가입</a>
+            </div>
+        </form>
+
+        <div class="sns_login_wrapper">
+            <div class="naver_login"><p>네이버 간편로그인</p></div>
+            <div class="kakao_login"><p>카카오 간편로그인</p></div>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modal_bg"></div>
+
+        <!-- 아이디 찾기 모달 -->
+        <div class="find_id_form find_form">
+            <p class="close_btn"><span class="material-symbols-outlined">
+                    close
+                    </span></p>
+            <h2>아이디 찾기</h2>
+            <form id="find_id_form">
+                <input type="text" name="userName" placeholder="이름">
+                <input type="text" name="userEmail" placeholder="이메일">
+                <input type="button" value="아이디 찾기" onclick="findIDCheck(this.form)">
+            </form>
+        </div>
+        <!-- 아이디 찾기 결과 모달 -->
+        <div class="find_id_res_form find_form">
+            <h2><span>xx</span>님의 아이디</h2>
+            <p class="id_res">xxxxx</p>
+            <input type="button" value="확인">
+        </div>
+        <!-- 비밀번호 찾기 모달 -->
+        <div class="find_pw_form find_form">
+            <p class="close_btn"><span class="material-symbols-outlined">
+                    close
+                    </span></p>
+            <h2>새 비밀번호 설정</h2>
+            <form method="post" action="login" id="find_pw_form">
+                <input type="text" name="userID" placeholder="아이디">
+                <div class="lr">
+                    <input type="text" name="userEmail" placeholder="이메일"><input type="submit" value="이메일 보내기">
+                </div>
+                <div class="lr">
+                    <input type="text" name="emailCertification" placeholder="인증번호"><input type="submit" value="인증번호 확인">
+                </div>
+
+                <input type="button" class="find" value="비밀번호 변경" onclick="findPWCheck(this.form)">
+            </form>
+        </div>
+        <!-- 새 비밀번호 설정 모달 -->
+        <div class="new_pw_form find_form">
+            <p class="close_btn"><span class="material-symbols-outlined">
+                    close
+                    </span></p>
+            <h2>새 비밀번호 설정</h2>
+            <form method="post" action="login.html" id="new_pw_form">
+                <input type="text" name="chgpw" placeholder="새 비밀번호">
+                <input type="text" name="chgpw_check" placeholder="새 비밀번호 확인">
+                <input type="button" value="비밀번호 변경" onclick="chgPWCheck(form)">
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

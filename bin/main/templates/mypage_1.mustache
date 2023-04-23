@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/mypage_style.css"/>
+    <!--펜 아이콘-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!--개인정보 아이콘-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!--활동기록 아이콘-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div id = "left">
+        <div id = "left_user">
+              <h3>마이페이지</h3> <br>
+              <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
+                   alt="user image" id = "userImage"
+                   onClick()={fileInput.current.click()}/> <br>
+              닉네임 님
+              <button id="nickEditBtn" onclick="window.open('mypage_nickname.html');">
+                  <span class="material-symbols-outlined">edit</span>
+              </button>
+              <br>
+        </div>
+        <div id = "left_list">
+              <ul>
+                  <li>
+                      <i><span class="material-symbols-outlined">account_circle</span></i>
+                      <span><a href = "/mypage"><strong>개인정보</strong></a></span>
+                  </li>
+                  <li>
+                      <i><span class="material-symbols-outlined">list_alt</span></i>
+                      <span><a href = "/mypage/comment">활동기록</a></span>
+                  </li>
+              </ul>
+        </div>
+    </div>
+    <div id = "content">
+        <h1>개인정보</h1><br>
+        <ul id="userCat">
+            <li>이름</li> {{name}} <br>
+            <li>이메일</li> <br>
+            <li>아이디</li> <br>
+            <li>생년월일</li> <br>
+            <li>성별</li> <br>
+            <li>관심카테고리</li>
+            <form>
+              <input type="checkbox">생활
+              <input type="checkbox">교육/학문
+              <input type="checkbox">사회/정치
+              <input type="checkbox">엔터테인먼트/예술
+              <input type="checkbox">쇼핑
+            </form>
+        </ul>
+        <br>
+        <input type="button" id="btn" value="수정사항 저장" onclick=alert("저장되었습니다.")>
+        <input type="button" id="btn" value="비밀번호 변경" onclick="window.open('mypage_password.html');">
+        <input type="button" id="btn" value="회원 탈퇴" onclick="removeCheck();">
+    </div>
+    <script src="/js/mypage.js"></script>
+</body>
+</html>

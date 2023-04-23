@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cursor.cursor.mapper.AdminUserMapper">
+
+    <select id="getUser" resultType="com.cursor.cursor.vo.AdminUser">
+        SELECT u.id, u.name, u.email, u.joindate, act.createcount, act.commentcount, act.votecount FROM user AS u
+        LEFT JOIN user_activity AS act ON act.id = u.id
+
+    </select>
+
+    <!--회원id/제목키워드 검색 투표글 불러오기-->
+    <select id ="findByKeyword" resultType="com.cursor.cursor.vo.AdminUser">
+        SELECT u.user_num, u.id, u.name, u.email, u.joindate, act.createcount, act.commentcount, act.votecount FROM user AS u
+        LEFT JOIN user_activity AS act ON act.id = u.id
+        WHERE u.id like concat('%', #{keyword}, '%') or u.name like concat('%', #{keyword}, '%') or u.email like concat('%', #{keyword}, '%')
+
+    </select>
+
+    <!--투표글 삭제-->
+    <delete id="deleteUser" parameterType="int">
+        delete
+        from cursor.user
+        where user_num=#{idx_user_num};
+    </delete>
+
+<!--    <select id="getUserActivity" resultType="com.cursor.cursor.vo.AdminUserActivity">-->
+<!--        SELECT id, createcount, commentcount, votecount From user_activity-->
+<!--        ORDER BY id DESC-->
+<!--    </select>-->
+
+</mapper>

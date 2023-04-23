@@ -1,0 +1,149 @@
+/* 전체 글꼴 설정 */
+html {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 리스트 디자인 */
+ul {
+    list-style-type:none;
+    padding-left:20px;
+}
+
+/* 리스트 디자인 */
+li {
+    font-size:18px;
+    font-weight:300;
+    padding:5px;
+    padding-left:0;
+    margin:0;
+}
+
+/* 링크 디자인 */
+a {
+    color:black;
+    text-decoration:none;
+}
+
+/* ( ) 관리 header 디자인 */
+h1 {
+    font-size:40px;
+    font-weight:700;
+    padding-left:30px;
+}
+
+h2 {
+    font-size:25px;
+    font-weight:400;
+    text-align: center;
+    padding-bottom:20px;
+    margin-bottom:0;
+    border-bottom:1px solid black;
+}
+
+/* 관리자 페이지와 ( ) 관리 간 그리드 */
+#grid {
+    display:grid;
+    grid-template-columns: 200px 1fr;
+    height:100%;
+}
+
+/* grid 화면 꽉 차게 설정 */
+html, body {
+	width: 100%; height: 100%;
+    margin:0;
+}
+
+/* 관리자 페이지 우측 선 디자인 */
+div.left {
+    padding-right: 1%;
+    border-right:1px solid black;
+}
+div.right{
+    padding-right: 15%;
+    padding-left: 15%;
+}
+
+div.search{
+    display: flex;
+    padding-left: 10%;
+    margin-left: auto;
+}
+
+/* 클릭한 아이콘 색상 */
+.fa-angle-right {
+    color: #CEA9BE;
+}
+
+/* 아이콘 색상 */
+.fa-angle-down {
+    color: #96B8D2;
+}
+
+/*검색창*/
+.search {
+    width: 500px;
+    display: flex;
+}
+
+/*표 바로 위에 있는 삭제, 수정, 정렬*/
+div.topOfTable{
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+/*관리자 페이지 표*/
+table.managePage_table{
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    align-items: center;
+    margin: auto;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+
+}
+
+table.managePage_table th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+table.managePage_table td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+tr.content {
+    font-weight:300;
+}
+
+button.button_search{
+    display: flex;
+    text-align: center;
+    padding:10px;
+
+}
+
+button.right_button{
+    float: right;
+    margin: 2px;
+    padding: 4px;
+}
+
+input {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+div.paging {
+    margin-top: 15px;
+    margin-left: 500px;
+}

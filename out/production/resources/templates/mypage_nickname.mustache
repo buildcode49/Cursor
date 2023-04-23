@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/mypage_style.css"/>
+</head>
+<body>
+    <div id = "nickname_wrapper">
+        <h1>프로필 변경</h1>
+        <form class="form">
+          <div>
+              <label>새로운 닉네임 입력</label>
+              <input type="text" required/>
+          </div>
+          <div>
+              <label>프로필 이미지 변경</label>
+              <input type="file" id="fileInput" required/>
+          </div>
+              <input type="button" id="btn" value="저장하기" onclick="saveMsg();">
+              <input type="button" id="btn" value="취소" onclick="window.close();">
+        </form>
+    </div>
+    <script src="/js/mypage.js"></script>
+</body>
+</html>

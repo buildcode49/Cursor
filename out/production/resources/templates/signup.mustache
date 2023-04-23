@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/signup.js"></script>
+
+</head>
+<body>
+<header>
+
+</header>
+<section>
+    <div class="signup_wrapper">
+        <h2>SIGN UP</h2>
+        <form method="post" id="signup_form" action="signup">
+            <div>
+                <label for="userID">아이디&nbsp;<span class="required">*</span></label>
+                <p>
+                    <input type="text" name="userID" placeholder="5-20자 이내의 영소문자, 숫자 필수입니다.">
+                    <input type="button" value="중복확인">
+                </p>
+            </div>
+            <div>
+                <label for="userNickname">닉네임</label>
+                <p>
+                    <input type="text" name="userNickname">
+                    <input type="button" value="중복확인">
+                </p>
+            </div>
+            <div>
+                <label for="userPW">비밀번호&nbsp;<span class="required">*</span></label>
+                <p>
+                    <input type="text" name="userPW" placeholder="8-20자 이내의 영대소문자, 숫자가 필수입니다.">
+                </p>
+            </div>
+            <div>
+                <label for="userPWCheck">비밀번호 확인&nbsp;<span class="required">*</span></label>
+                <p>
+                    <input type="text" name="userPWCheck">
+                </p>
+            </div>
+            <div>
+                <label for="userName">이름&nbsp;<span class="required">*</span></label>
+                <p>
+                    <input type="text" name="userName">
+                </p>
+
+            </div>
+            <div>
+                <label for="userEmail">이메일&nbsp;<span class="required">*</span></label>
+                <p>
+                    <input type="text" id="userEmail" name="userEmail">
+                    <span id="middle">&nbsp;@&nbsp;</span>
+                    <input type="text" id="userEmailAddress" name="userEmailAddress" value="">
+                    <select name="" id="mail_select">
+                        <option>직접입력</option>
+                        <option>naver.com</option>
+                        <option>gmail.com</option>
+                        <option>daum.net</option>
+                        <option>nate.com</option>
+                    </select>
+                    <input type="hidden" id="totalEmail" name="email" value="">
+                    <input type="button" value="중복확인">
+                </p>
+            </div>
+            <div>
+                <label for="userBirth">생년월일</label>
+                <select name="yy" id="year">
+
+                </select> 년 &nbsp;
+                <select name="mm" id="month">
+
+                </select> 월 &nbsp;
+                <select name="dd" id="day">
+
+                </select> 일 &nbsp;
+                <input type="hidden" id="totalBirth" name="birth" value="">
+
+            </div>
+            <div class="gender">
+                <label for="userGender">성별</label>
+                <p>
+                    <label for="gender_man">
+                        <input type="radio" name="gender" id="gender_man" value="0" checked> 남자 &nbsp;
+                    </label>
+                    <label for="gender_woman">
+                        <input type="radio" name="gender" id="gender_woman" value="1"> 여자
+                    </label>
+                </p>
+            </div>
+            <div class="category">
+                <label for="category">관심 카테고리</label>
+                <!-- 카테고리 db로 처리? 나중에 카테고리 추가하기 쉬울 듯 -->
+                <p>
+                    <label for="0">
+                        <input type="checkbox" name="category" value="0" id="0"> 생활
+                    </label>
+                    <label for="1">
+                        <input type="checkbox" name="category" value="1" id="1"> 엔터테인먼트/예술
+                    </label>
+                    <label for="2">
+                        <input type="checkbox" name="category" value="2" id="2"> 교육/학문
+                    </label>
+                    <label for="3">
+                        <input type="checkbox" name="category" value="3" id="3"> 사회/정치
+                    </label>
+                    <label for="4">
+                        <input type="checkbox" name="category" value="4" id="4"> 쇼핑
+                    </label>
+                    <label for="5">
+                        <input type="checkbox" name="category" value="5" id="5"> 건강
+                    </label>
+                    <label for="6">
+                        <input type="checkbox" name="category" value="6" id="6"> 컴퓨터 통신
+                    </label>
+                    <label for="7">
+                        <input type="checkbox" name="category" value="7" id="7"> 게임
+                    </label>
+                    <label for="8">
+                        <input type="checkbox" name="category" value="8" id="8"> 스포츠/레저
+                    </label>
+                    <label for="9">
+                        <input type="checkbox" name="category" value="9" id="9"> 지역/플레이스
+                    </label>
+                    <label for="10">
+                        <input type="checkbox" name="category" value="10" id="10"> 경제
+                    </label>
+                    <label for="11">
+                        <input type="checkbox" name="category" value="11" id="11"> 여행
+                    </label>
+                </p>
+                <input type="hidden" id="arrayCategory" name="arrayCategory">
+            </div>
+            <hr>
+            <div class="agree">
+                <label for="agree">약관 동의</label>
+                <div>
+                    <label for="agree_all">
+                        <input type="checkbox" name="agree_all" id="agree_all">
+                        <span>약관 전체 동의</span>
+                    </label>
+                    <p>
+                        <label for="agree1">
+                            <input type="checkbox" name="agree" id = "agree1" value="1">
+                            <span>이용약관 및 개인정보 수집 이용 동의&nbsp;<strong>(필수)</strong></span>
+                        </label>
+                        <label for="agree2">
+                            <input type="checkbox" name="agree" id = "agree2" value="2">
+                            <span>SNS 수신동의&nbsp;<strong class="select_disable">(선택)</strong></span>
+                        </label>
+                    </p>
+                    <input type="hidden" id="arrayAgree" name="arrayAgree">
+                </div>
+            </div>
+
+            <input type="button" value="회원가입" onclick="signUpFormCheck(this.form)">
+
+        </form>
+    </div>
+</section>
+</body>
+</html>

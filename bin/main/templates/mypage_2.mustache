@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/mypage_style.css"/>
+    <!--펜 아이콘-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!--개인정보 아이콘-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!--활동기록 아이콘-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div id = "left">
+        <div id = "left_user">
+              <h3>마이페이지</h3> <br>
+              <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="user image" id = "userImage"> <br>
+              닉네임 님
+              <button id="nickEditBtn" onclick="window.open('mypage_nickname.html');">
+                  <span class="material-symbols-outlined">edit</span>
+              </button>
+              <br>
+        </div>
+        <div id = "left_list">
+          <ul>
+              <li>
+                  <i><span class="material-symbols-outlined">account_circle</span></i>
+                  <span><a href = "/mypage">개인정보</a></span>
+              </li>
+              <li>
+                  <i><span class="material-symbols-outlined">list_alt</span></i>
+                  <span><a href = "/mypage/comment"><strong>활동기록</strong></a></span>
+              </li>
+          </ul>
+        </div>
+    </div>
+    <div id = "content">
+        <h1> 나의 투표 </h1>
+        <h1> 내가 작성한 댓글 </h1>
+    </div>
+    <script src="/js/mypage.js"></script>
+</body>
+</html>
